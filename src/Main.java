@@ -6,8 +6,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int s = scanner.nextInt();
-        double[] a = new double[s];
-        System.out.println(avg(n,a));
+        System.out.println(GCD(n,s));
 
         }
     public static int Pow(int a, int n) {//Problem 6
@@ -57,6 +56,14 @@ public class Main {
         }
         else{
             return true;
+        }
+    }
+    public static int GCD(int a, int b){
+        if(b == 0){
+            return a;
+        }
+        else{
+            return GCD(b, a%b);
         }
     }
     }
