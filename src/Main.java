@@ -5,11 +5,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        int[] s = new int[n];
-        for(int i = 0; i<n; i++){
-            s[i] = scanner.nextInt();
-        }
-        System.out.println(FindMin(s,n));
+
+        System.out.println(fib(n));
 
         }
     public static int Pow(int a, int n) {//Problem 6
@@ -21,6 +18,17 @@ public class Main {
         }
         else {
             return 1 / Pow(a, -n);
+        }
+    }
+    public static int fib(int a){//problem 5
+        if(a == 0){
+            return 0;
+        }
+        else if(a == 1){
+            return 1;
+        }
+        else{
+            return fib(a-1) + fib(a -2 );
         }
     }
     public static int FindMin(int[]arr, int a){//problem 1
@@ -47,16 +55,16 @@ public class Main {
                 x++;
             }
         }
-        if(x == 2){
+        if(x > 2){
+            return false;
+        }
+
+        else if (x == 2 ){
             System.out.println("It's a prime " + (a-1+1) );
             return prime(a-1);
         }
-
-        else if (x < 0 ){
-            return false;
-        }
         else{
-            return true;
+            return false;
         }
     }
     public static int Binomial(int a, int b){//Problem 9
